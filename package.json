@@ -1,0 +1,15 @@
+{
+  "name": "quizy-easy",
+  "version": "0.0.1",
+  "description": "Easy quiz on angularJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "quiz",
+    "angular"
+  ],
+  "author": "krostyslav",
+  "license": "ISC"
+}
