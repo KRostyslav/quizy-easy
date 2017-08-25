@@ -4,12 +4,22 @@
   "description": "Easy quiz on angularJS",
   "main": "index.js",
   "scripts": {
+    "start": "live-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "quiz",
     "angular"
   ],
+"dependencies": {
+  "angular": "^1.6.6",
+  "angular-ui-router": "^1.0.3",
+  "angular-material": "^1.1.4",
+  "jquery": "^3.2.1",
+  "bootstrap": "^3.3.7",
+  "font-awesome": "^4.7.0",
+  "live-server": "^1.2.0"
+},
   "author": "krostyslav",
-  "license": "ISC"
+  "license": "MIT"
 }
