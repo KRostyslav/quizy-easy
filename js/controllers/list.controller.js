@@ -85,7 +85,7 @@
 
         vm.data = turtlesData;
         vm.dummyData = "Hello World";
-        console.log('List controller')
+        console.log('List controller');
     }
 
 })();
