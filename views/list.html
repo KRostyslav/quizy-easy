@@ -1,5 +1,5 @@
-<div class="container">
-    <div ng-controller="listCtrl as list">
+<div ng-controller="listCtrl as list">
+    <div class="container">
         <div class="row">
             <div class="col-sm-6" ng-repeat="turtle in list.data">
                 <div class="well well-sm">
@@ -18,12 +18,48 @@
                             <p><strong>Diet: </strong>{{turtle.diet}}</p>
                             <button class="btn btn-primary pull-right"
                                     data-toggle="modal"
-                                    data-target="#turtle-info">Learn More</button>
+                                    data-target="#turtle-info"
+                                    ng-click="list.changeActiveTurtle(turtle)">Learn More
+                            </button>
                         </div>
                     </div><!-- row -->
                 </div><!-- well -->
             </div>
         </div>
-
     </div>
+
+    <div id="turtle-info" class="modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">{{list.activeTurtle.type}}</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-8 col-xs-offset-2">
+                            <img ng-src="{{list.activeTurtle.image_url}}"
+                                 class="img-rounded img-responsive well-image">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Locations:{{vm}} </strong>{{list.activeTurtle.locations}}</p>
+                            <p><strong>Size: </strong>{{list.activeTurtle.size}}</p>
+                            <p><strong>Average Lifespan: </strong>{{list.activeTurtle.lifespan}}</p>
+                            <p><strong>Diet: </strong>{{vm.activeTurtle.diet}}</p>
+                        </div>
+                        <div class="col-xs-12 top-buffer">
+                            <p>{{list.activeTurtle.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">Close</button>
+                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+

@@ -8,7 +8,7 @@
         // List Controller Logic
         var vm = this;
 
-        var turtlesData = [
+        vm.turtlesData = [
             {
                 type: "Green Turtle",
                 image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Green_turtle_swimming_over_coral_reefs_in_Kona.jpg/800px-Green_turtle_swimming_over_coral_reefs_in_Kona.jpg",
@@ -83,9 +83,31 @@
             }
         ];
 
-        vm.data = turtlesData;
+        vm.data = vm.turtlesData;
         vm.dummyData = "Hello World";
-        console.log('List controller');
+
+        vm.activeTurtle = {}; // will be used in the view to hold the data of currently active turtle
+
+        // This is public methods
+        vm.init = init;
+        vm.changeActiveTurtle = changeActiveTurtle;
+
+        vm.init();
+
+        //////////////////////////////////////////////////////
+
+        function init() {}
+
+        function changeActiveTurtle(index){
+            vm.activeTurtle = index;
+            console.log(vm.activeTurtle);
+        };
+
+
+        /////////////////////////////////////////////////////
+        // This is private methods
+
+
     }
 
 })();
