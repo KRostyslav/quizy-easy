@@ -86,6 +86,8 @@
         vm.data = vm.turtlesData;
         vm.dummyData = "Hello World";
 
+        vm.search = "";
+
         vm.activeTurtle = {}; // will be used in the view to hold the data of currently active turtle
 
         // This is public methods

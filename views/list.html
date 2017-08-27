@@ -1,8 +1,21 @@
 <div ng-controller="listCtrl as list">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6" ng-repeat="turtle in list.data">
-                <div class="well well-sm">
+            <div class="block-search">
+                <form class="form-inline well well-sm clearfix">
+                    <span class="glyphicon glyphicon-search"></span>
+                    <input
+                            type="text"
+                            placeholder="Search..."
+                            class="form-control"
+                            ng-model="list.search">
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6" ng-repeat="turtle in list.data | filter:list.search">
+                <div class="well well-sm block-info">
                     <div class="row">
                         <div class="col-md-6">
 
