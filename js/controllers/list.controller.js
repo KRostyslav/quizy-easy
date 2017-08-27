@@ -4,9 +4,13 @@
         .module("englishQuiz")
         .controller("listCtrl", ListController);
 
-    function ListController(){
+    ListController.$inject = ['quizMetrics'];
+
+    function ListController(quizMetrics){
         // List Controller Logic
         var vm = this;
+
+        vm.quizMetrics = quizMetrics;
 
         vm.turtlesData = [
             {
@@ -82,17 +86,16 @@
                 description: "Snake-necked turtles, as the name suggests, have an unusually long neck. Their necks may be up to 60 percent of their carapace length. Their carapace is oval and flattened, usually dark-brown to black measuring up to 11 inches (27.5 cm) in length. Scutes are shed as the animals grow. The males have a longer, thicker tail than females and a concave plastron. They are excellent swimmers; they have large, webbed feet with sharp claws used to tear apart food."
             }
         ];
-
         vm.data = vm.turtlesData;
         vm.dummyData = "Hello World";
-
         vm.search = "";
-
+        vm.quizActive = false;
         vm.activeTurtle = {}; // will be used in the view to hold the data of currently active turtle
 
         // This is public methods
         vm.init = init;
         vm.changeActiveTurtle = changeActiveTurtle;
+        vm.activateQuiz = activateQuiz;
 
         vm.init();
 
@@ -103,8 +106,12 @@
         function changeActiveTurtle(index){
             vm.activeTurtle = index;
             console.log(vm.activeTurtle);
-        };
+        }
 
+        function activateQuiz(){
+            quizMetrics.changeState(true);
+            // vm.quizActive = true;
+        }
 
         /////////////////////////////////////////////////////
         // This is private methods

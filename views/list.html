@@ -1,4 +1,4 @@
-<div ng-controller="listCtrl as list">
+<div ng-controller="listCtrl as list" ng-hide="list.quizMetrics.quizActive">
     <div class="container">
         <div class="row">
             <div class="block-search">
@@ -9,6 +9,10 @@
                             placeholder="Search..."
                             class="form-control"
                             ng-model="list.search">
+                    <button class="btn btn-warning pull-right"
+                            ng-click="list.activateQuiz()">
+                        <strong>Start Quiz</strong>
+                    </button>
                 </form>
             </div>
         </div>
@@ -55,7 +59,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="">
                             <p><strong>Locations:{{vm}} </strong>{{list.activeTurtle.locations}}</p>
                             <p><strong>Size: </strong>{{list.activeTurtle.size}}</p>
                             <p><strong>Average Lifespan: </strong>{{list.activeTurtle.lifespan}}</p>
@@ -74,5 +78,11 @@
         </div>
     </div>
 
+</div>
+
+<div ng-controller="quizCtrl as quiz" ng-show="quiz.quizMetrics.quizActive">
+    <p><h1>Hello quiz!1</h1></p>
+    <p><h2>Hello quiz!2</h2></p>
+    <p><h3>Hello quiz!3</h3></p>
 </div>
 
