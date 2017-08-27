@@ -81,8 +81,57 @@
 </div>
 
 <div ng-controller="quizCtrl as quiz" ng-show="quiz.quizMetrics.quizActive">
-    <p><h1>Hello quiz!1</h1></p>
-    <p><h2>Hello quiz!2</h2></p>
-    <p><h3>Hello quiz!3</h3></p>
+    <div class="row block-progress">
+            <div class="col-xs-8 col-lg-8 col-sm-8">
+                <h2>Progress:</h2>
+                <div class="btn-toolbar">
+                    <button class="btn"
+                            ng-repeat="question in quiz.dataService.quizQuestions"
+                            ng-class="{'btn-info': question.selected !== null, 'btn-danger': question.selected === null}">
+
+                  <span class="glyphicon"
+                        ng-class="{'glyphicon-pencil': question.selected !== null, 'glyphicon-question-sign': question.selected === null}"></span>
+
+                    </button>
+                </div>
+            </div>
+            <div class="col-xs-4 col-lg-4 col-sm-4">
+                <div class="row ">
+                    <h2>Legend:</h2>
+                    <div class="col-sm-4">
+                        <button class="btn btn-info">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <p>Answered</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <button class="btn btn-danger">
+                            <span class="glyphicon glyphicon-question-sign"></span>
+                        </button>
+                        <p>Unanswered</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="row block-question">
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <!-- Question Area -->
+                    <h3>Question: {{quiz.activeQuestion+1 + ". " + quiz.dataService.quizQuestions[quiz.activeQuestion].text}}</h3>
+                    <div class="row">
+                        <div class="col-sm-6"
+                             ng-repeat="answer in quiz.dataService.quizQuestions[quiz.activeQuestion].possibilities">
+                            <h4 class="answer">
+                                {{answer.answer}}
+                            </h4>
+                        </div>
+                    </div>
+                    <button class="btn btn-warning" ng-click="quiz.questionAnswered()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 

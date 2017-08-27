@@ -1,7 +1,10 @@
+.block-empty{
+    height: 70px;
+}
 .block-info{
     border: solid 1px grey;
     border-radius: 5px;
-    background-color: lightgrey;
+    background-color: gainsboro;
     margin: 5px;
     padding: 5px;
     height: 320px;
@@ -17,6 +20,26 @@
     padding: 20px;
 }
 .block-search{
-    margin-top: 60px;
-    margin-bottom: 20px;
+margin: 20px;
+}
+
+/* Quiz */
+.block-progress{
+    margin: 20px;
+}
+.block-question{
+    margin: 20px;
+    border: 1px solid #bbb;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background-color: gainsboro;
+}
+
+.answer{
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid #bbb;
+}
+.answer:hover{
+    cursor: pointer;
 }

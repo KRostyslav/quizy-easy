@@ -4,14 +4,15 @@
         .module("englishQuiz")
         .controller("quizCtrl", QuizController);
 
-    QuizController.$inject = ['quizMetrics'];
+    QuizController.$inject = ['quizMetrics', 'DataService'];
 
-    function QuizController(quizMetrics){
+    function QuizController(quizMetrics, DataService){
 
         var vm = this;
-        console.log('Start quiz');
 
         vm.quizMetrics = quizMetrics;
+        vm.dataService = DataService;
+        vm.activeQuestion = 0;
     }
 
 })();
