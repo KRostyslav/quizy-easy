@@ -8,6 +8,7 @@
 
     function DataService(){
 
+        var correctAnswers = [1, 2, 3, 0, 2, 0, 3, 2, 0, 3];
         var turtlesData = [
             {
                 type: "Green Turtle",
@@ -287,7 +288,8 @@
 
         var dataObj = {
             turtlesData: turtlesData,
-            quizQuestions: quizQuestions
+            quizQuestions: quizQuestions,
+            correctAnswers: correctAnswers
         };
 
         return dataObj;
